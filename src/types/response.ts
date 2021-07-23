@@ -87,55 +87,55 @@ export type UnitResponse = {
 
 export type FilteredUnitsResponse = {
   filteredUnits: {
-    units: UnitResponsePartial[]
-  }
-}
+    units: UnitResponsePartial[];
+  };
+};
 
 // GAME RESPONSES
 
 export type GameResponsePartial = {
-  id: string,
-  gameElo: number,
-  playerCount: number,
-  humanCount: number,
-  leftKingPercentHP: number[],
-  rightKingPercentHP: number[],
-  ts: string,
-  endingWave: number,
-  gameLength: number,
-  version: string,
-  queueType: string
+  id: string;
+  gameElo: number;
+  playerCount: number;
+  humanCount: number;
+  leftKingPercentHP: number[];
+  rightKingPercentHP: number[];
+  ts: string;
+  endingWave: number;
+  gameLength: number;
+  version: string;
+  queueType: string;
 };
 
 export type GameDetailPartial = {
-  legion: string,
-  workers: number,
-  income: number,
-  value: number,
-  isCross: boolean,
-  gameResult: string,
-  overallElo: number,
-  playerProfile: PlayerPartial,
-  position: number,
-  unitsPerWave: string[][],
-  leaksPerWave: string[][],
-  mercsReceivedPerWave: string[][],
-  mercsSentPerWave: string[][],
-  workersPerWave: number[],
-  netWorthPerWave: number[],
-  leakValue: number,
-  leakCaughtValue: number,
-  partyMemberIds: string[],
-  mvpScore: number,
-  incomePerWave: number[],
-  legionSpell: string
-}
+  legion: string;
+  workers: number;
+  income: number;
+  value: number;
+  isCross: boolean;
+  gameResult: string;
+  overallElo: number;
+  playerProfile: PlayerPartial;
+  position: number;
+  unitsPerWave: string[][];
+  leaksPerWave: string[][];
+  mercsReceivedPerWave: string[][];
+  mercsSentPerWave: string[][];
+  workersPerWave: number[];
+  netWorthPerWave: number[];
+  leakValue: number;
+  leakCaughtValue: number;
+  partyMemberIds: string[];
+  mvpScore: number;
+  incomePerWave: number[];
+  legionSpell: string;
+};
 
 export type GameDetailResponse = {
   game: {
-    gameDetails: GameDetailPartial[] 
-  }
-}
+    gameDetails: GameDetailPartial[];
+  };
+};
 
 export type GameSearchResponse = {
   games: {

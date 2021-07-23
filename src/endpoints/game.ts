@@ -64,11 +64,11 @@ export class GamesEndpoint extends RequestInitiator {
         orderby,
         direction: {
           value: direction,
-          type: "SortDirection"
+          type: 'SortDirection',
         },
         queuetype: {
           value: queuetype,
-          type: 'QueueType'
+          type: 'QueueType',
         },
       },
       operation: 'games',
@@ -76,15 +76,15 @@ export class GamesEndpoint extends RequestInitiator {
         {
           games: gameFields,
         },
-        'count'
+        'count',
       ],
     });
 
     const response = (await this._query<APIResponse<GameSearchResponse>>(query)).data.games;
 
-    const games: GameDTO[] = response.games.map((game => {
+    const games: GameDTO[] = response.games.map((game) => {
       return new GameDTO(game);
-    }));
+    });
 
     return new GameSearchDTO({
       games,

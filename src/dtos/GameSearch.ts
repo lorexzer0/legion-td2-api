@@ -14,6 +14,6 @@ export class GameSearchDTO {
    * Total amount of games that matches the filter (excluding limit / offset)
    */
   public get totalGames() {
-    return this.gameSearchData.count
+    return this.gameSearchData.count;
   }
 }

@@ -61,22 +61,22 @@ export class UnitsEndpoint extends RequestInitiator {
       variables: {
         legion: {
           value: legion,
-          type: "Legion"
-        }
+          type: 'Legion',
+        },
       },
       operation: 'filteredUnits',
       fields: [
         {
-          units: unitFields
-        }
-      ]
-    })
-    
+          units: unitFields,
+        },
+      ],
+    });
+
     const response = (await this._query<APIResponse<FilteredUnitsResponse>>(query)).data.filteredUnits;
-    
-    return response.units.map((unit => {
-      return new UnitDTO(unit)
-    }));
+
+    return response.units.map((unit) => {
+      return new UnitDTO(unit);
+    });
   }
 
   public async getByName(name: string): Promise<UnitDTO> {

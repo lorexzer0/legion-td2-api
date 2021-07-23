@@ -1,10 +1,4 @@
-import { LegionTD2Api } from '..';
-import { GamesEndpoint } from '../endpoints/game';
-import { PlayersEndpoint } from '../endpoints/player';
-import { RequestInitiator } from '../requestInitiator';
 import { GameResponsePartial } from '../types/response';
-import { GameDetailDTO } from './GameDetail';
-import { PlayerDTO } from './Player';
 
 export class GameDTO {
   constructor(private gameData: GameResponsePartial) {}

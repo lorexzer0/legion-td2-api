@@ -46,5 +46,15 @@
   "dependencies": {
     "axios": "^0.21.1",
     "gql-query-builder": "^3.5.5"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "npm run lint",
+      "npm run format",
+      "git add -A src"
+    ]
   }
 }

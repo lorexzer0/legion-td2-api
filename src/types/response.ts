@@ -136,3 +136,10 @@ export type GameDetailResponse = {
     gameDetails: GameDetailPartial[] 
   }
 }
+
+export type GameSearchResponse = {
+  games: {
+    games: GameResponsePartial[];
+    count: number;
+  };
+};

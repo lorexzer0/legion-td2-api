@@ -1,5 +1,7 @@
 import axios, { AxiosInstance } from "axios";
-import { PlayersEndpoint } from "./endpoints/players";
+import { GamesEndpoint } from "./endpoints/game";
+import { PlayersEndpoint } from "./endpoints/player";
+import { UnitsEndpoint } from "./endpoints/unit";
 import { LegionTD2ApiConfig } from "./types/global";
 
 export class LegionTD2Api {
@@ -13,6 +15,8 @@ export class LegionTD2Api {
 
     // Endpoints
     public player: PlayersEndpoint;
+    public unit: UnitsEndpoint;
+    public game: GamesEndpoint;
 
     constructor(config: LegionTD2ApiConfig) {
         this.config = new Map(Object.keys(config).map((key) => [key, (config as {[key: string]: string})[key]]));
@@ -22,6 +26,8 @@ export class LegionTD2Api {
         });
 
         this.player = new PlayersEndpoint(this.instance, this.config);
+        this.unit = new UnitsEndpoint(this.instance, this.config);
+        this.game = new GamesEndpoint(this.instance, this.config);
     }
 
 }
